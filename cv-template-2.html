@@ -34,7 +34,9 @@
         --gray_color_900: #5c5a58;
         --gray_color_50: #e9eaeb;
       }
+
       /* General styles */
+
       * {
         margin: 0;
         padding: 0;
@@ -42,10 +44,10 @@
       }
       html {
         font-family: Poppins, sans-serif;
-        width: 100vw;
         height: 100vh;
+        max-width: 100%;
+        min-width: 390px;
         font-size: 16px;
-        color: var(--black_color);
         font-style: normal;
       }
 
@@ -81,26 +83,23 @@
       }
 
       /* header styles */
+
       header {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing_16);
-        align-self: stretch;
       }
 
       h1 {
         color: var(--white_color);
-        font-family: Poppins, sans-serif;
         font-size: 48px;
         font-weight: 600;
         line-height: 28px;
-        align-self: stretch;
         text-transform: uppercase;
         display: flex;
         flex-direction: column;
         gap: var(--spacing_16);
-        font-style: normal;
       }
 
       h1 > span {
@@ -116,7 +115,7 @@
 
       header > hr {
         border: 1px solid var(--light_color);
-        width: 364px;
+        width: 100%;
       }
 
       @media (min-width: 728px) {
@@ -126,7 +125,7 @@
       }
       @media (min-width: 1024px) {
         header > hr {
-          width: 269px;
+          width: 100%;
         }
 
         h1 {
@@ -150,7 +149,6 @@
         grid-area: aside;
         background-color: var(--primary_color);
         display: flex;
-        align-self: stretch;
         flex-direction: column;
         align-items: stretch;
         padding: var(--spacing_64) var(--spacing_32);
@@ -162,7 +160,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing_8);
-        align-self: stretch;
       }
 
       .aside__section__header > div {
@@ -173,6 +170,7 @@
         gap: var(--spacing_8);
         height: 100%;
       }
+
       .aside__section__header > div > h3 {
         color: var(--white_color);
         font-size: 16px;
@@ -183,23 +181,16 @@
         display: flex;
         padding: 0px 8px;
         justify-content: space-between;
-        align-items: flex-start;
-        align-content: flex-start;
-        row-gap: 32px;
+        row-gap: var(--spacing_32);
         column-gap: var(--spacing_8);
         font-size: 14px;
         line-height: normal;
-        align-self: stretch;
         flex-wrap: wrap;
       }
 
       .aside__section__list-items {
-        align-items: flex-start;
-        align-self: stretch;
         color: var(--white_color);
-        font-family: Poppins, sans-serif;
         font-size: 14px;
-        font-style: normal;
         font-weight: 400;
         line-height: 28px;
         display: flex;
@@ -213,12 +204,14 @@
         align-items: center;
         gap: var(--spacing_8);
       }
+
       .aside__section__item > a {
         color: var(--white_color);
         font-size: 14px;
         text-decoration: none;
         text-transform: capitalize;
       }
+
       .aside__section__item > a:hover {
         color: var(--black_color);
       }
@@ -253,47 +246,44 @@
           gap: var(--spacing_16);
         }
       }
+
       /* main section styles */
+
       main {
         grid-area: main;
         display: flex;
         padding: var(--spacing_32) var(--spacing_16);
         flex-direction: column;
-        align-items: flex-start;
-        align-self: stretch;
         gap: var(--spacing_32);
       }
+
       .main__section {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        align-self: stretch;
         gap: var(--spacing_16);
       }
 
       .main__section__header {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+      }
+
+      .main__section__header > h2 {
         color: var(--primary_color);
         text-align: center;
-        font-family: Poppins, sans-serif;
         font-size: 24px;
-        font-style: normal;
         font-weight: 600;
         line-height: normal;
       }
+
       .main__section__item {
         color: var(--black_color_900);
-        font-family: Poppins, sans-serif;
         font-size: 12px;
-        font-style: normal;
         font-weight: 400;
-        line-height: normal;
         display: flex;
-        align-items: flex-start;
         gap: var(--spacing_8);
-        flex: 1 0 0;
+        flex-grow: 1;
       }
 
       .section__content {
@@ -301,7 +291,6 @@
         gap: var(--spacing_8);
         display: flex;
         align-items: flex-start;
-        align-self: stretch;
       }
 
       .section__content__header {
@@ -309,39 +298,30 @@
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing_8);
-        flex: 1 0 0;
+        flex-grow: 1;
       }
 
       .section__content__header > h3 {
         color: var(--black_color_900);
-        font-family: Poppins, sans-serif;
         font-size: 20px;
-        font-style: normal;
         font-weight: 600;
         line-height: 20px;
       }
+
       .section__content__header > h4 {
         color: var(--black_color_900);
-        font-family: Poppins, sans-serif;
         font-size: 16px;
-        font-style: normal;
         font-weight: 400;
-        line-height: normal;
       }
 
       .section__content__date {
         display: flex;
-        align-items: flex-start;
         gap: 8px;
-        align-self: stretch;
       }
 
       .section__content__data {
-        align-self: stretch;
         color: var(--gray_color_900);
-        font-family: Poppins, sans-serif;
         font-size: 12px;
-        font-style: normal;
         font-weight: 400;
         line-height: 24px;
       }
@@ -356,11 +336,8 @@
       }
 
       .section__content > .data {
-        align-self: stretch;
         color: var(--gray_color_900);
-        font-family: Poppins, sans-serif;
         font-size: 12px;
-        font-style: normal;
         font-weight: 400;
         line-height: 24px;
       }
@@ -370,8 +347,7 @@
 
       .dot-icon {
         display: flex;
-        padding: 4px;
-        align-items: flex-start;
+        padding: var(--spacing_base);
         gap: 10px;
       }
 
@@ -384,7 +360,7 @@
       @media (min-width: 1024px) {
         main {
           grid-area: main;
-          padding: var(--spacing_48);
+          padding: var(--spacing_64);
         }
       }
     </style>
@@ -635,7 +611,7 @@
               </div>
               <div class="section__content__data">
                 <p>Tipo de organización: <b>Startup</b></p>
-                <p>Roles dentro de la empresa: <b>Fundador</b></p>
+                <p>Roles dentro de la empresa: <b>CEO</b></p>
                 <p>Retos:</p>
                 <ul>
                   <li>
@@ -745,10 +721,12 @@
             <div class="section__content">
               <div class="section__content__header">
                 <h3>Instituto de Empresa</h3>
-                <h4>Computer Science Grade</h4>
+                <h4>
+                  Herramientas para facilitar el trabajo colaborativo en el
+                  ecosistema de Atlassian Confluence.
+                </h4>
               </div>
-              <!-- this empty div is necessary if we don't have date data -->
-              <div class="section__content__date"></div>
+
               <div class="data">
                 <p>Tipo de organización: <b>Institución académica</b></p>
                 <p>
