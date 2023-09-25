@@ -4,8 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -24,7 +22,6 @@
         --spacing_32: calc(var(--spacing_base) * 8);
         --spacing_48: calc(var(--spacing_base) * 12);
         --spacing_64: calc(var(--spacing_base) * 16);
-
         /* colors */
         --primary_color: #247a7e; /* only this color can be changed  */
         --light_color: #f0f8f9;
@@ -34,9 +31,7 @@
         --gray_color_900: #5c5a58;
         --gray_color_50: #e9eaeb;
       }
-
       /* General styles */
-
       * {
         margin: 0;
         padding: 0;
@@ -44,139 +39,88 @@
       }
       html {
         font-family: Poppins, sans-serif;
-        height: 100vh;
-        max-width: 100%;
         min-width: 390px;
         font-size: 16px;
         font-style: normal;
       }
-
       body {
         display: flex;
         min-height: 100vh;
       }
-
       .container {
         display: grid;
         grid-template-areas:
           "aside"
           "main";
-        row-gap: var(--spacing_32);
-        column-gap: var(--spacing_16);
       }
       .divider {
-        min-height: 100%;
-        border: var(--spacing_base) solid var(--primary_color);
-      }
-
-      .secondary-divider {
-        border-radius: 4px;
+        border-radius: var(--spacing_base);
         border: var(--spacing_2) solid var(--primary_color);
         width: 50%;
       }
-
-      .svg-stroke {
-        stroke: var(--white_color);
-      }
-      .svg-fill {
-        fill: var(--white_color);
-      }
-
       /* header styles */
-
       header {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         gap: var(--spacing_16);
       }
-
       h1 {
+        display: flex;
+        flex-direction: column;
         color: var(--white_color);
         font-size: 48px;
         font-weight: 600;
         line-height: 28px;
         text-transform: uppercase;
-        display: flex;
-        flex-direction: column;
         gap: var(--spacing_16);
       }
-
       h1 > span {
         font-size: 36px;
       }
-
       .job-title {
         color: var(--gray_color_50);
         font-size: 20px;
         font-weight: 500;
         letter-spacing: 0.4px;
       }
-
       header > hr {
         border: 1px solid var(--light_color);
         width: 100%;
       }
 
-      @media (min-width: 728px) {
-        header > hr {
-          width: 770px;
-        }
-      }
       @media (min-width: 1024px) {
-        header > hr {
-          width: 100%;
-        }
-
         h1 {
           gap: var(--spacing_8);
         }
-
         .job-title {
           font-size: 16px;
         }
-
         .container {
           grid-template-areas: "aside main";
           grid-template-columns: 333px auto;
           align-self: center;
         }
       }
-
       /* aside styles */
-
       aside {
         grid-area: aside;
         background-color: var(--primary_color);
         display: flex;
         flex-direction: column;
-        align-items: stretch;
         padding: var(--spacing_64) var(--spacing_32);
         gap: var(--spacing_32);
       }
-
       .aside__section {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing_8);
       }
-
-      .aside__section__header > div {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: var(--spacing_8);
-        height: 100%;
-      }
-
-      .aside__section__header > div > h3 {
+      .aside__section > h3 {
         color: var(--white_color);
         font-size: 16px;
         font-weight: 600;
       }
-
       .aside__section__link-items {
         display: flex;
         padding: 0px 8px;
@@ -184,10 +128,8 @@
         row-gap: var(--spacing_32);
         column-gap: var(--spacing_8);
         font-size: 14px;
-        line-height: normal;
         flex-wrap: wrap;
       }
-
       .aside__section__list-items {
         color: var(--white_color);
         font-size: 14px;
@@ -198,57 +140,47 @@
         gap: var(--spacing_8);
         padding-left: var(--spacing_32);
       }
-
       .aside__section__item {
         display: flex;
         align-items: center;
         gap: var(--spacing_8);
       }
-
       .aside__section__item > a {
         color: var(--white_color);
         font-size: 14px;
         text-decoration: none;
         text-transform: capitalize;
       }
-
       .aside__section__item > a:hover {
         color: var(--black_color);
       }
-
       @media (min-width: 728px) {
         aside {
           padding: var(--spacing_64) var(--spacing_32) var(--spacing_32)
             var(--spacing_32);
         }
-
         .aside__section__link-items {
           flex-wrap: nowrap;
         }
       }
-
       @media (min-width: 1024px) {
         aside {
           grid-area: aside;
           padding: var(--spacing_64) var(--spacing_32);
-          width: 333px;
+          min-width: 333px;
         }
-
         h1 {
           font-size: 36px;
         }
         h1 > span {
           font-size: 24px;
         }
-
         .aside__section__link-items {
           flex-direction: column;
           gap: var(--spacing_16);
         }
       }
-
       /* main section styles */
-
       main {
         grid-area: main;
         display: flex;
@@ -256,19 +188,16 @@
         flex-direction: column;
         gap: var(--spacing_32);
       }
-
       .main__section {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing_16);
       }
-
       .main__section__header {
         display: flex;
         flex-direction: column;
       }
-
       .main__section__header > h2 {
         color: var(--primary_color);
         text-align: center;
@@ -276,7 +205,6 @@
         font-weight: 600;
         line-height: normal;
       }
-
       .main__section__item {
         color: var(--black_color_900);
         font-size: 12px;
@@ -285,78 +213,54 @@
         gap: var(--spacing_8);
         flex-grow: 1;
       }
-
       .section__content {
         flex-direction: column;
         gap: var(--spacing_8);
         display: flex;
-        align-items: flex-start;
       }
-
-      .section__content__header {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--spacing_8);
-        flex-grow: 1;
-      }
-
-      .section__content__header > h3 {
+      .section__content > h3 {
         color: var(--black_color_900);
         font-size: 20px;
         font-weight: 600;
         line-height: 20px;
       }
-
-      .section__content__header > h4 {
+      .section__content > h4 {
         color: var(--black_color_900);
         font-size: 16px;
         font-weight: 400;
       }
-
       .section__content__date {
         display: flex;
         gap: 8px;
       }
-
       .section__content__data {
         color: var(--gray_color_900);
-        font-size: 12px;
-        font-weight: 400;
         line-height: 24px;
       }
-
       .section__content__data b {
         font-weight: 600;
       }
-
-      .section__content__data > ul {
+      .section__content__data__ul {
         font-weight: 300;
         padding-left: var(--spacing_16);
       }
-
-      .section__content > .data {
+      .data {
         color: var(--gray_color_900);
-        font-size: 12px;
         font-weight: 400;
-        line-height: 24px;
       }
-      .section__content > .data b {
+      .data b {
         font-weight: 700;
       }
-
       .dot-icon {
         display: flex;
         padding: var(--spacing_base);
         gap: 10px;
       }
-
       @media (min-width: 728px) {
         main {
           padding: var(--spacing_32) var(--spacing_64);
         }
       }
-
       @media (min-width: 1024px) {
         main {
           grid-area: main;
@@ -368,21 +272,13 @@
   <body>
     <div class="container">
       <aside>
+        <header>
+          <h1>david <br /><span>bonilla fuertes</span></h1>
+          <hr />
+          <p class="job-title">Fundador en Manfred / C-Level Executive</p>
+        </header>
         <div class="aside__section">
-          <div class="aside__section__header">
-            <header>
-              <h1>david <br /><span>bonilla fuertes</span></h1>
-              <hr />
-              <p class="job-title">Fundador en Manfred / C-Level Executive</p>
-            </header>
-          </div>
-        </div>
-        <div class="aside__section">
-          <div class="aside__section__header">
-            <div>
-              <h3>Mis enlaces</h3>
-            </div>
-          </div>
+          <h3>Mis enlaces</h3>
           <div class="aside__section__link-items">
             <div class="aside__section__item">
               <svg
@@ -504,11 +400,7 @@
           </div>
         </div>
         <div class="aside__section">
-          <div class="aside__section__header">
-            <div>
-              <h3>Idiomas / Nivel</h3>
-            </div>
-          </div>
+          <h3>Idiomas / Nivel</h3>
           <ul class="aside__section__list-items">
             <li>Español (Habilidad navito o bilingüe)</li>
             <li>Inglés (Habilidad profesional completo)</li>
@@ -516,22 +408,14 @@
           </ul>
         </div>
         <div class="aside__section">
-          <div class="aside__section__header">
-            <div>
-              <h3>Habilidades Técnicas</h3>
-            </div>
-          </div>
+          <h3>Habilidades Técnicas</h3>
           <ul class="aside__section__list-items">
             <li>JIRA</li>
             <li>JAVA</li>
           </ul>
         </div>
         <div class="aside__section">
-          <div class="aside__section__header">
-            <div>
-              <h3>Habilidades interpersonales</h3>
-            </div>
-          </div>
+          <h3>Habilidades interpersonales</h3>
           <ul class="aside__section__list-items">
             <li>Liderazgo</li>
             <li>Atraer talento y retenerlo</li>
@@ -545,37 +429,36 @@
         <section class="main__section">
           <div class="main__section__header">
             <h2>Sobre mi</h2>
-            <hr class="secondary-divider" />
+            <hr class="divider" />
           </div>
-          <div class="main__section__item">
-            <p>
-              Llevo casi dos décadas desarrollando software, ocupando puestos a
-              lo largo de toda la cadena de valor -programacion, diseño de
-              producto, marketing, ventas y gestión de equipos, departamentos y
-              empresas- pero creo que el rol donde se cruzan mi vocación, mis
-              habilidades y las necesidades de la mayoría de las empresas es en
-              la gestión de equipos y proyectos de construcción de activos
-              digitales. Me apasiona contribuir en todo el ciclo de vida de un
-              producto o servicio informático, desde la definición hasta el
-              mantenimiento o soporte a clientes, y también involucrarme en la
-              comercialización del mismo. Me gusta trabajar con gente y para la
-              gente. Como responsable de equipos, mi principal prioridad siempre
-              es eliminar cualquier problema que les impida alcanzar todo su
-              potencial. También procuro devolver a la Comunidad informática
-              parte del valor y el conocimiento que me han aportado a lo largo
-              de mi carrera profesional, dando charlas o colaborando con grupos
-              de usuarios y conferencias técnicas; y, a veces, organizándolos.
-            </p>
-          </div>
+          <p class="main__section__item">
+            Llevo casi dos décadas desarrollando software, ocupando puestos a lo
+            largo de toda la cadena de valor -programacion, diseño de producto,
+            marketing, ventas y gestión de equipos, departamentos y empresas-
+            pero creo que el rol donde se cruzan mi vocación, mis habilidades y
+            las necesidades de la mayoría de las empresas es en la gestión de
+            equipos y proyectos de construcción de activos digitales. Me
+            apasiona contribuir en todo el ciclo de vida de un producto o
+            servicio informático, desde la definición hasta el mantenimiento o
+            soporte a clientes, y también involucrarme en la comercialización
+            del mismo. Me gusta trabajar con gente y para la gente. Como
+            responsable de equipos, mi principal prioridad siempre es eliminar
+            cualquier problema que les impida alcanzar todo su potencial.
+            También procuro devolver a la Comunidad informática parte del valor
+            y el conocimiento que me han aportado a lo largo de mi carrera
+            profesional, dando charlas o colaborando con grupos de usuarios y
+            conferencias técnicas; y, a veces, organizándolos.
+          </p>
         </section>
         <section class="main__section">
           <div class="main__section__header">
             <h2>Experiencia</h2>
-            <hr class="secondary-divider" />
+            <hr class="divider" />
           </div>
           <div class="main__section__item">
             <div class="dot-icon">
               <svg
+                class="dot-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 width="8"
                 height="8"
@@ -586,10 +469,9 @@
               </svg>
             </div>
             <div class="section__content">
-              <div class="section__content__header">
-                <h3>Manfred</h3>
-                <h4>Plataforma de Talento y agencia de recruiting técnico</h4>
-              </div>
+              <h3>Manfred</h3>
+              <h4>Plataforma de Talento y agencia de recruiting técnico</h4>
+
               <div class="section__content__date">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -609,42 +491,45 @@
                 </svg>
                 <p>Jun 2018 - Actualidad</p>
               </div>
-              <div class="section__content__data">
-                <p>Tipo de organización: <b>Startup</b></p>
-                <p>Roles dentro de la empresa: <b>CEO</b></p>
-                <p>Retos:</p>
-                <ul>
-                  <li>
-                    Adaptación de la organización y procesos de la empresa para
-                    escalar las operaciones de la misma.
-                  </li>
-                  <li>
-                    Desarrollo de producto propio para escalar las operaciones
-                    de la compañía, especialmente la aportación de valor a
-                    candidatos.
-                  </li>
-                  <li>
-                    Culminación del [proceso de
-                    compraventa](https://bonillaware.com/manfred-sngular) de la
-                    compañía por parte de Sngular, manteniendo el núcleo de
-                    empleados de la compañía y sin que la productividad o las
-                    ventas se resintieran antes, durante y después del mismo.
-                  </li>
-                  <li>
-                    Creación y publicación de contratos open source (candidatos
-                    y empresas) para construir un marco legal para una empresa
-                    de recruiting.
-                  </li>
-                  <li>
-                    Definición del modelo de datos y los procesos necesarios
-                    para identificar, clasificar y gestionar perfiles de
-                    profesionales técnicos.
-                  </li>
-                  <li>Definición de formato CV extendido.</li>
-                  <li>Definición e implementación de la web de la compañía.</li>
-                  <li>Apertura de nueva filial en Bilbao.</li>
-                </ul>
-              </div>
+
+              <p class="section__content__data">
+                Tipo de organización: <b>Startup</b>
+              </p>
+              <p class="section__content__data">
+                Roles dentro de la empresa: <b>CEO</b>
+              </p>
+              <p class="section__content__data">Retos:</p>
+              <ul class="section__content__data section__content__data__ul">
+                <li>
+                  Adaptación de la organización y procesos de la empresa para
+                  escalar las operaciones de la misma.
+                </li>
+                <li>
+                  Desarrollo de producto propio para escalar las operaciones de
+                  la compañía, especialmente la aportación de valor a
+                  candidatos.
+                </li>
+                <li>
+                  Culminación del [proceso de
+                  compraventa](https://bonillaware.com/manfred-sngular) de la
+                  compañía por parte de Sngular, manteniendo el núcleo de
+                  empleados de la compañía y sin que la productividad o las
+                  ventas se resintieran antes, durante y después del mismo.
+                </li>
+                <li>
+                  Creación y publicación de contratos open source (candidatos y
+                  empresas) para construir un marco legal para una empresa de
+                  recruiting.
+                </li>
+                <li>
+                  Definición del modelo de datos y los procesos necesarios para
+                  identificar, clasificar y gestionar perfiles de profesionales
+                  técnicos.
+                </li>
+                <li>Definición de formato CV extendido.</li>
+                <li>Definición e implementación de la web de la compañía.</li>
+                <li>Apertura de nueva filial en Bilbao.</li>
+              </ul>
             </div>
           </div>
           <div class="main__section__item">
@@ -661,13 +546,12 @@
             </div>
 
             <div class="section__content">
-              <div class="section__content__header">
-                <h3>Comalatech</h3>
-                <h4>
-                  Herramientas para facilitar el trabajo colaborativo en el
-                  ecosistema de Atlassian Confluence.
-                </h4>
-              </div>
+              <h3>Comalatech</h3>
+              <h4>
+                Herramientas para facilitar el trabajo colaborativo en el
+                ecosistema de Atlassian Confluence.
+              </h4>
+
               <div class="section__content__date">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -688,22 +572,23 @@
                 <p>Feb 2017 - Jun 2018</p>
               </div>
 
-              <div class="section__content__data">
-                <p>Tipo de organización: <b>Startup</b></p>
-                <p>Roles dentro de la empresa: <b>Fundador</b></p>
-                <p>Retos:</p>
-                <ul>
-                  <li>
-                    Adaptación de todos los procesos de la compañía al nuevo
-                    RGPD
-                  </li>
-                  <li>Apertura de nueva filial en Bilbao</li>
-                  <li>Coordinación de actividades en Europa</li>
-                  <li>Estandarización de contratos</li>
-                  <li>Soporte</li>
-                  <li>Lanzamiento de Comala Agile Ranking</li>
-                </ul>
-              </div>
+              <p class="section__content__data">
+                Tipo de organización: <b>Startup</b>
+              </p>
+              <p class="section__content__data">
+                Roles dentro de la empresa: <b>Fundador</b>
+              </p>
+              <p class="section__content__data">Retos:</p>
+              <ul class="section__content__data section__content__data__ul">
+                <li>
+                  Adaptación de todos los procesos de la compañía al nuevo RGPD
+                </li>
+                <li>Apertura de nueva filial en Bilbao</li>
+                <li>Coordinación de actividades en Europa</li>
+                <li>Estandarización de contratos</li>
+                <li>Soporte</li>
+                <li>Lanzamiento de Comala Agile Ranking</li>
+              </ul>
             </div>
           </div>
           <div class="main__section__item">
@@ -719,30 +604,26 @@
               </svg>
             </div>
             <div class="section__content">
-              <div class="section__content__header">
-                <h3>Instituto de Empresa</h3>
-                <h4>
-                  Herramientas para facilitar el trabajo colaborativo en el
-                  ecosistema de Atlassian Confluence.
-                </h4>
-              </div>
+              <h3>Instituto de Empresa</h3>
+              <h4>
+                Herramientas para facilitar el trabajo colaborativo en el
+                ecosistema de Atlassian Confluence.
+              </h4>
 
-              <div class="data">
-                <p>Tipo de organización: <b>Institución académica</b></p>
-                <p>
-                  Roles dentro de la empresa:
-                  <b
-                    >Profesor asociado de productividad y metodologías ágiles</b
-                  >
-                </p>
-              </div>
+              <p class="data">
+                Tipo de organización: <b>Institución académica</b>
+              </p>
+              <p class="data">
+                Roles dentro de la empresa:
+                <b>Profesor asociado de productividad y metodologías ágiles</b>
+              </p>
             </div>
           </div>
         </section>
         <section class="main__section">
           <div class="main__section__header">
             <h2>Educación</h2>
-            <hr class="secondary-divider" />
+            <hr class="divider" />
           </div>
           <div class="main__section__item">
             <div class="dot-icon">
@@ -757,98 +638,9 @@
               </svg>
             </div>
             <div class="section__content">
-              <div class="section__content__header">
-                <h3>Ingeniería Técnica Informática</h3>
-                <h4>Computer Science Grade</h4>
-              </div>
-              <div class="section__content__date">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    opacity="0.75"
-                    d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
-                    stroke="#0D1418"
-                    stroke-width="0.75"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <p>Sep 2002 - Jun 2006</p>
-              </div>
-              <div class="data">
-                <p>Tipo de estudios: <b>Grado oficial</b></p>
-                <p>Grado obtenido: <b>No obtenido</b></p>
-                <p>Nombre de la institución: <b>OUC</b></p>
-                <p>Ubicación de la institución: <b>Cataluña, España</b></p>
-              </div>
-            </div>
-          </div>
-          <div class="main__section__item">
-            <div class="dot-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-              >
-                <circle opacity="0.33" cx="4" cy="4" r="4" fill="#247A7E" />
-              </svg>
-            </div>
-            <div class="section__content">
-              <div class="section__content__header">
-                <h3>Master en Desarrollo de Aplicaciones Web</h3>
-                <h4>Computer Science Grade</h4>
-              </div>
-              <div class="section__content__date">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    opacity="0.75"
-                    d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
-                    stroke="#0D1418"
-                    stroke-width="0.75"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <p>Sep 2002 - Jun 2006</p>
-              </div>
-              <div class="data">
-                <p>Tipo de estudios: <b>Certificación</b></p>
-                <p>Grado obtenido: <b>Obtenido</b></p>
-                <p>Nombre de la institución: <b>CFDTI IBM/La Caixa</b></p>
-                <p>Ubicación de la institución: <b>Madrid, España</b></p>
-              </div>
-            </div>
-          </div>
-          <div class="main__section__item">
-            <div class="dot-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-              >
-                <circle opacity="0.33" cx="4" cy="4" r="4" fill="#247A7E" />
-              </svg>
-            </div>
-            <div class="section__content">
-              <div class="section__content__header">
-                <h3>Certified Scrum Master</h3>
-                <h4>Scrum Master certificado por la Scrum Alliance</h4>
-              </div>
+              <h3>Ingeniería Técnica Informática</h3>
+              <h4>Computer Science Grade</h4>
+
               <div class="section__content__date">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -869,12 +661,104 @@
                 <p>Sep 2002 - Jun 2006</p>
               </div>
 
-              <div class="data">
-                <p>Tipo de estudios: <b>Certificación</b></p>
-                <p>Grado obtenido: <b>Obtenido</b></p>
-                <p>Nombre de la institución: <b>Scrum Alliance</b></p>
-                <p>Ubicación de la institución: <b>Madrid, España</b></p>
+              <p class="data">Tipo de estudios: <b>Grado oficial</b></p>
+              <p class="data">Grado obtenido: <b>No obtenido</b></p>
+              <p class="data">Nombre de la institución: <b>OUC</b></p>
+              <p class="data">
+                Ubicación de la institución: <b>Cataluña, España</b>
+              </p>
+            </div>
+          </div>
+          <div class="main__section__item">
+            <div class="dot-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="8"
+                height="8"
+                viewBox="0 0 8 8"
+                fill="none"
+              >
+                <circle opacity="0.33" cx="4" cy="4" r="4" fill="#247A7E" />
+              </svg>
+            </div>
+            <div class="section__content">
+              <h3>Master en Desarrollo de Aplicaciones Web</h3>
+              <h4>Computer Science Grade</h4>
+
+              <div class="section__content__date">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                >
+                  <path
+                    opacity="0.75"
+                    d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
+                    stroke="#0D1418"
+                    stroke-width="0.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>Sep 2002 - Jun 2006</p>
               </div>
+
+              <p class="data">Tipo de estudios: <b>Certificación</b></p>
+              <p class="data">Grado obtenido: <b>Obtenido</b></p>
+              <p class="data">
+                Nombre de la institución: <b>CFDTI IBM/La Caixa</b>
+              </p>
+              <p class="data">
+                Ubicación de la institución: <b>Madrid, España</b>
+              </p>
+            </div>
+          </div>
+          <div class="main__section__item">
+            <div class="dot-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="8"
+                height="8"
+                viewBox="0 0 8 8"
+                fill="none"
+              >
+                <circle opacity="0.33" cx="4" cy="4" r="4" fill="#247A7E" />
+              </svg>
+            </div>
+            <div class="section__content">
+              <h3>Certified Scrum Master</h3>
+              <h4>Scrum Master certificado por la Scrum Alliance</h4>
+
+              <div class="section__content__date">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                >
+                  <path
+                    opacity="0.75"
+                    d="M4.33333 1V3M13.6667 1V3M1 15V5C1 4.46957 1.21071 3.96086 1.58579 3.58579C1.96086 3.21071 2.46957 3 3 3H15C15.5304 3 16.0391 3.21071 16.4142 3.58579C16.7893 3.96086 17 4.46957 17 5V15M1 15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H15C15.5304 17 16.0391 16.7893 16.4142 16.4142C16.7893 16.0391 17 15.5304 17 15M1 15V8.33333C1 7.8029 1.21071 7.29419 1.58579 6.91912C1.96086 6.54405 2.46957 6.33333 3 6.33333H15C15.5304 6.33333 16.0391 6.54405 16.4142 6.91912C16.7893 7.29419 17 7.8029 17 8.33333V15M9 9.66667H9.00711V9.67378H9V9.66667ZM9 11.6667H9.00711V11.6738H9V11.6667ZM9 13.6667H9.00711V13.6738H9V13.6667ZM7 11.6667H7.00711V11.6738H7V11.6667ZM7 13.6667H7.00711V13.6738H7V13.6667ZM5 11.6667H5.00711V11.6738H5V11.6667ZM5 13.6667H5.00711V13.6738H5V13.6667ZM11 9.66667H11.0071V9.67378H11V9.66667ZM11 11.6667H11.0071V11.6738H11V11.6667ZM11 13.6667H11.0071V13.6738H11V13.6667ZM13 9.66667H13.0071V9.67378H13V9.66667ZM13 11.6667H13.0071V11.6738H13V11.6667Z"
+                    stroke="#0D1418"
+                    stroke-width="0.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <p>Sep 2002 - Jun 2006</p>
+              </div>
+
+              <p class="data">Tipo de estudios: <b>Certificación</b></p>
+              <p class="data">Grado obtenido: <b>Obtenido</b></p>
+              <p class="data">
+                Nombre de la institución: <b>Scrum Alliance</b>
+              </p>
+              <p class="data">
+                Ubicación de la institución: <b>Madrid, España</b>
+              </p>
             </div>
           </div>
         </section>
