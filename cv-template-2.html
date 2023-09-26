@@ -48,6 +48,8 @@
         min-height: 100vh;
       }
       .container {
+        max-width: 1200px;
+        background-color: var(--white_color);
         display: grid;
         grid-template-areas:
           "aside"
@@ -123,7 +125,7 @@
       }
       .aside__section__link-items {
         display: flex;
-        padding: 0px 8px;
+        padding: 0px var(--spacing_8);
         justify-content: space-between;
         row-gap: var(--spacing_32);
         column-gap: var(--spacing_8);
@@ -231,7 +233,7 @@
       }
       .section__content__date {
         display: flex;
-        gap: 8px;
+        gap: var(--spacing_8);
       }
       .section__content__data {
         color: var(--gray_color_900);
@@ -254,7 +256,6 @@
       .dot-icon {
         display: flex;
         padding: var(--spacing_base);
-        gap: 10px;
       }
       @media (min-width: 728px) {
         main {
@@ -458,7 +459,6 @@
           <div class="main__section__item">
             <div class="dot-icon">
               <svg
-                class="dot-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 width="8"
                 height="8"
