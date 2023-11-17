@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.cdnfonts.com/css/source-serif-pro"
       rel="stylesheet"
@@ -56,11 +57,12 @@
       html {
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
-        display: flex;
         color: var(--manfred-dark);
         background-color: var(--manfred-light);
       }
       body {
+        display: flex;
+        flex-direction: column;
         min-height: 100vh;
         padding: var(--spacing_64) var(--spacing_32);
       }
@@ -81,7 +83,7 @@
       }
 
       .surname {
-        font-size: 42px;
+        font-size: 45px;
         -webkit-text-fill-color: var(--manfred-blue);
         letter-spacing: -0.72px;
         text-transform: capitalize;
@@ -158,10 +160,6 @@
       }
 
       @media (min-width: 1024px) {
-        html > body {
-          padding: var(--spacing_32) var(--spacing_64);
-        }
-
         .header__content__address > p {
           font-size: 16px;
         }
@@ -172,10 +170,6 @@
           align-items: center;
           flex-direction: row;
           gap: var(--spacing_64);
-        }
-
-        main > .main__section__header > ul {
-          flex-wrap: nowrap;
         }
       }
 
@@ -338,6 +332,12 @@
         }
         .main__section__header > ul > li {
           min-width: 300px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        html > body {
+          padding: var(--spacing_32) var(--spacing_64);
         }
       }
     </style>
